@@ -36,16 +36,6 @@
 @property (nonatomic, assign) CGAffineTransform scaleTransform;
 
 /**
- Spring damping for the semi modal transition
- */
-@property (nonatomic, assign) CGFloat springDamping;
-
-/**
- Spring Velocity for the semi modal transition
- */
-@property (nonatomic, assign) CGFloat springVelocity;
-
-/**
  The background shade alpha of the view underneath the semi modal
  */
 @property (nonatomic, assign) CGFloat backgroundShadeAlpha;

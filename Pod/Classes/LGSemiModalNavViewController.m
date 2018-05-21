@@ -14,6 +14,10 @@
 
 @implementation LGSemiModalNavViewController
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - Life
 
 - (void)loadView{
@@ -23,16 +27,15 @@
     self.view.clipsToBounds = YES;
     self.transitioningDelegate = self;
     self.modalPresentationStyle = UIModalPresentationCustom;
+    self.modalPresentationCapturesStatusBarAppearance = YES;
     [self defaults];
 }
 
 -(void)defaults{
     _tapDismissEnabled = YES;
-    _animationSpeed = 0.35f;
+    _animationSpeed = 0.15f;
     _backgroundShadeColor = [UIColor blackColor];
-    _scaleTransform = CGAffineTransformMakeScale(.94, .94);
-    _springDamping = 0.88;
-    _springVelocity = 14;
+    _scaleTransform = CGAffineTransformMakeScale(.9, .9);
     _backgroundShadeAlpha = 0.4;
 }
 
@@ -61,8 +64,6 @@
     animator.animationSpeed = _animationSpeed;
     animator.backgroundShadeColor = _backgroundShadeColor;
     animator.scaleTransform = _scaleTransform;
-    animator.springDamping = _springDamping;
-    animator.springVelocity = _springVelocity;
     animator.backgroundShadeAlpha = _backgroundShadeAlpha;
     return animator;
 }

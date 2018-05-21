@@ -60,8 +60,8 @@
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                          animations:^{
-                             backgroundView.alpha = _backgroundShadeAlpha;
-                            [(UIView*)[transitionContext.containerView.subviews objectAtIndex:0] setTransform:_scaleTransform];
+                             backgroundView.alpha = self->_backgroundShadeAlpha;
+                             [(UIView*)[transitionContext.containerView.subviews objectAtIndex:0] setTransform:self->_scaleTransform];
                          }
                          completion:^(BOOL finished) {
                              
@@ -69,8 +69,6 @@
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext] + .2
                               delay:0
-             usingSpringWithDamping:_springDamping
-              initialSpringVelocity:_springVelocity
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
                              toViewController.view.frame = modalViewFinalFrame;
